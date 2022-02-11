@@ -2,7 +2,6 @@
 const types={
   ADD_TODO: 'ADD_TODO',
   GET_INFO_TODO:'GET_INFO_TODO',
-  UPDATE_TODO: 'UPDATE_TODO'
   }
 export default {
   namespaced:true,
@@ -33,7 +32,7 @@ export default {
     [types.GET_INFO_TODO](state, payload){
       state.todoInfo = state.todo[payload]
       localStorage.setItem('todosInfo', JSON.stringify(state.todoInfo))
-      console.log(state.todoInfo)
+      localStorage.setItem('todos', JSON.stringify(state.todo))
     }
   },
   actions: {

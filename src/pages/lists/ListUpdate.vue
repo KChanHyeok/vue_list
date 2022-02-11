@@ -18,8 +18,8 @@ export default {
     }
   },
   methods:{
-    gohome(){
-    
+    gohome(e){
+    e.preventDefault()
     this.$router.push('/')
     }
   }
