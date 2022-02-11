@@ -1,20 +1,17 @@
 <template>
   <div>
     <p>이곳은 등록페이지입니다</p>
-    <d-input class="titleText" v-model="titleText"></d-input><br>
-    <textarea class="mainText" v-model="mainText"></textarea>
-    <d-button @click="Addtodo">추가</d-button>
+    <b-form-input class="titleText" v-model="titleText"></b-form-input><br>
+    <b-form-textarea class="mainText" v-model="mainText"></b-form-textarea>
+    <b-button class="" @click="addTodo">추가</b-button>
   </div>
 </template>
 
 <script>
-import DInput from '../../components/DInput.vue'
-import DButton from '../../components/DButton.vue'
 
 export default {
-  components:{
-    DInput,
-    DButton
+  computed:{
+
   },
   data(){
     return{
@@ -23,10 +20,13 @@ export default {
     }
   },
   methods:{
-    Addtodo(){
+    addTodo(){
       if(this.titleText&&this.mainText){
-        this.mainText=''
+        this.$store.dispatch('list/addTodo', this.titleText)
+        console.log(this.titleText)
+        console.log(this.mainText)
         this.titleText=''
+        this.mainText=''
       }
       
     }

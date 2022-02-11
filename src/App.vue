@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div>
-    <h1 id="title">너의 게시판</h1>
+    <h2 id="title">이곳은 당신의 게시판입니다.</h2>
     <router-view></router-view>
     </div>
   </div>

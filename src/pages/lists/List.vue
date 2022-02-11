@@ -1,6 +1,6 @@
 <template>
   <div>
-    <d-button @click="onAddList">등록</d-button>
+    <b-button @click="onAddList" size='lg' >등록</b-button>
     <div class="listBox">
     <li>이곳은 나의 게시판내용입니다</li>
     </div>
@@ -8,12 +8,9 @@
 </template>
 
 <script>
-import DButton from '../../components/DButton.vue'
 
 export default {
-  components: {
-    DButton
-  },
+
   data() {
     return {
 
