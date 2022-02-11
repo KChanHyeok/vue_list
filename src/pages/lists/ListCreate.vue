@@ -1,8 +1,8 @@
 <template>
   <div>
     <p>이곳은 등록페이지입니다</p>
-    <b-form-input class="titleText" v-model="titleText"></b-form-input><br>
-    <b-form-textarea class="mainText" v-model="mainText"></b-form-textarea>
+    제목<b-form-input class="titleText" v-model="titleText"></b-form-input><br>
+    내용<b-form-textarea class="mainText" v-model="mainText"></b-form-textarea>
     <b-button class="" @click="addTodo">추가</b-button>
   </div>
 </template>
@@ -28,6 +28,7 @@ export default {
         })
         this.titleText=''
         this.mainText=''
+        this.$router.go(-1)
       }
       
     }

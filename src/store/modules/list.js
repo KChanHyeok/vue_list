@@ -1,7 +1,8 @@
 
 const types={
   ADD_TODO: 'ADD_TODO',
-  GET_INFO_TODO:'GET_INFO_TODO'
+  GET_INFO_TODO:'GET_INFO_TODO',
+  UPDATE_TODO: 'UPDATE_TODO'
   }
 export default {
   namespaced:true,
@@ -23,13 +24,14 @@ export default {
   mutations: {
     [types.ADD_TODO](state, payload){
       state.todo.push({
+        id:Math.random(),
         title:payload.title,
         text:payload.main
       })
       localStorage.setItem('todos', JSON.stringify(state.todo))
     },
     [types.GET_INFO_TODO](state, payload){
-      state.todoInfo= state.todo[payload]
+      state.todoInfo = state.todo[payload]
       localStorage.setItem('todosInfo', JSON.stringify(state.todoInfo))
       console.log(state.todoInfo)
     }
