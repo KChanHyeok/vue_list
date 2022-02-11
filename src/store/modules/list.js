@@ -11,12 +11,15 @@ export default {
     }
   },
   getters: {
-
+    todo(state){
+      return state.todo
+    }
   },
   mutations: {
     [types.ADD_TODO](state, payload){
       state.todo.push({
-        text:payload
+        title:payload.title,
+        text:payload.main
       })
       localStorage.setItem('todos', JSON.stringify(state.todo))
     }

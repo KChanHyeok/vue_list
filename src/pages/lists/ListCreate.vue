@@ -22,9 +22,10 @@ export default {
   methods:{
     addTodo(){
       if(this.titleText&&this.mainText){
-        this.$store.dispatch('list/addTodo', this.titleText)
-        console.log(this.titleText)
-        console.log(this.mainText)
+        this.$store.dispatch('list/addTodo',{
+          title:this.titleText,
+          main:this.mainText
+        })
         this.titleText=''
         this.mainText=''
       }

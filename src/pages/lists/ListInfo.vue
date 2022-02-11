@@ -1,6 +1,6 @@
 <template>
   <div>
-    이곳은 상세보기 페이지 입니다.
+    <h2>당신이 선택한 TODO의 내용입니다.</h2>
   </div>
 </template>
 

@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <div>
-    <h2 id="title">이곳은 당신의 게시판입니다.</h2>
     <router-view></router-view>
     </div>
   </div>
@@ -36,9 +35,6 @@ export default {
   height: 500px;
   border: 1px solid black;
   text-align: center;
-}
-.listBox li{
-  margin-top: 20px
 }
 
 
