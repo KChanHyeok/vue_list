@@ -14,7 +14,6 @@ export default {
   mixins:[InfoMixin],
   data(){
     return{
-
     }
   },
   methods:{
