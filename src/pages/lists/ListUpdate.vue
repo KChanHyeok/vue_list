@@ -17,9 +17,9 @@ export default {
     }
   },
   methods:{
-    gohome(e){
-    e.preventDefault()
+    gohome(){
     this.$router.push('/')
+    this.$store.dispatch('list/saveInfoTodo')
     }
   }
 }

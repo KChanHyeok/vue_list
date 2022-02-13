@@ -2,7 +2,7 @@ import { mapActions, mapGetters} from "vuex";
 
 const ListInfoMixin = {
   computed: {
-    ...mapGetters('list', ['todoInfo','todo']),
+    ...mapGetters('list', ['todoInfo','todos']),
   },
   methods:{
     ...mapActions('list', ['getInfoTodo'])
