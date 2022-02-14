@@ -2,9 +2,9 @@
   <div>
     <b-button @click="onAddList" size='lg' >등록</b-button>
     <div class="listBox">
-      <div v-for="(todos, index) in todo" :key=todos.id>
+      <div v-for="(list, index) in lists" :key=list.id>
         <hr>
-        <span @click="onInfoList(index)">{{todos.title}}</span>
+        <span @click="onInfoList(index)">{{list.title}}</span>
         <hr>
       </div>
     </div>
@@ -21,14 +21,14 @@ export default {
       }
   },
   computed:{
-    ...mapGetters('list',['todo'])
+    ...mapGetters('list',['lists'])
   },
   methods:{
     onAddList(){
       this.$router.push('/listcreate')
     },
     onInfoList(index){
-      this.$store.dispatch('list/getInfoTodo',{index})
+      this.$store.dispatch('list/getInfoList',{index})
       this.$router.push('/listinfo')
     }
   }
