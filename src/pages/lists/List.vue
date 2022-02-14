@@ -4,7 +4,7 @@
     <div class="listBox">
       <div v-for="list in lists" :key=list.id>
         <b-list-group @click="onInfoList(list.id)">
-        <b-list-group-item button>{{list.title}}</b-list-group-item>
+          <b-list-group-item button>{{ list.title }}</b-list-group-item>
         </b-list-group>
       </div>
     </div>
@@ -18,18 +18,17 @@ export default {
 
   data() {
     return {
-      }
+    }
   },
-  computed:{
-    ...mapGetters('list',['lists'])
+  computed: {
+    ...mapGetters('list', ['lists'])
   },
-  methods:{
-    onAddList(){
+  methods: {
+    onAddList() {
       this.$router.push('/listcreate')
     },
-    onInfoList(id){
-      this.$store.dispatch('list/getInfoList',{id})
-      console.log(id)
+    onInfoList(id) {
+      this.$store.dispatch('list/getInfoList', {id})
       this.$router.push('/listinfo')
     }
   }
