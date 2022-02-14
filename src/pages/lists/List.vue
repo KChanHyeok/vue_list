@@ -2,10 +2,10 @@
   <div>
     <b-button @click="onAddList" size='lg' >등록</b-button>
     <div class="listBox">
-      <div v-for="(list, index) in lists" :key=list.id>
-        <hr>
-        <span @click="onInfoList(index)">{{list.title}}</span>
-        <hr>
+      <div v-for="list in lists" :key=list.id>
+        <b-list-group @click="onInfoList(list.id)">
+        <b-list-group-item button>{{list.title}}</b-list-group-item>
+        </b-list-group>
       </div>
     </div>
   </div>
@@ -27,8 +27,9 @@ export default {
     onAddList(){
       this.$router.push('/listcreate')
     },
-    onInfoList(index){
-      this.$store.dispatch('list/getInfoList',{index})
+    onInfoList(id){
+      this.$store.dispatch('list/getInfoList',{id})
+      console.log(id)
       this.$router.push('/listinfo')
     }
   }

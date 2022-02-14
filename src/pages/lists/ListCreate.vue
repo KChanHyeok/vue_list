@@ -1,9 +1,18 @@
 <template>
   <div>
     <p>이곳은 등록페이지입니다</p>
-    제목<b-form-input class="titleText" v-model="titleText"></b-form-input><br>
-    내용<b-form-textarea class="mainText" v-model="mainText"></b-form-textarea>
-    <b-button class="" @click="addList">추가</b-button>
+    <p>제목</p>
+    <b-form-input 
+    class="titleText" 
+    v-model="titleText"
+    trim
+    ></b-form-input><br>
+    <p>내용</p>
+    <b-form-textarea 
+    class="mainText" 
+    v-model="mainText"
+    ></b-form-textarea>
+    <b-button @click="addList">추가</b-button>
   </div>
 </template>
 
@@ -21,7 +30,7 @@ export default {
   },
   methods:{
     addList(){
-      if(this.titleText&&this.mainText){
+      if(this.titleText.length>1&&this.mainText.length>1){
         this.$store.dispatch('list/addList',{
           title:this.titleText,
           main:this.mainText
