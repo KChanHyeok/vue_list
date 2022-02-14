@@ -38,6 +38,7 @@ export default {
         return list.id === payload
       });
       state.listInfo = state.lists[index]
+      localStorage.setItem('listsInfo', JSON.stringify(state.listInfo))
     },
     [types.UPDATE_INFO_LIST] (state, payload) {
       const index = state.lists.findIndex(list => {
