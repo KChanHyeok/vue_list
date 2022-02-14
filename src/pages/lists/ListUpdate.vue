@@ -3,7 +3,7 @@
     <p>수정할 내용을 입력하시오</p>
     제목 <b-form-input v-model="listInfo.title" ></b-form-input><br>
     내용 <b-form-textarea v-model="listInfo.main"></b-form-textarea><br>
-    <b-button @click="gohome">수정완료</b-button>
+    <b-button @click="updatelist">수정완료</b-button>
   </div>
 </template>
 
@@ -17,8 +17,7 @@ export default {
     }
   },
   methods:{
-    gohome(e){
-    e.preventDefault()
+    updatelist(){
     this.$router.push('/')
     }
   }
