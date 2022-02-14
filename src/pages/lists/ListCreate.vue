@@ -1,9 +1,11 @@
 <template>
   <div>
     <p>이곳은 등록페이지입니다</p>
-    제목<b-form-input class="titleText" v-model="titleText"></b-form-input><br>
-    내용<b-form-textarea class="mainText" v-model="mainText"></b-form-textarea>
-    <b-button class="" @click="addTodo">추가</b-button>
+    <p>제목</p>
+    <b-form-input class='titleText' v-model='titleText' trim></b-form-input><br>
+    <p>내용</p>
+    <b-form-textarea class='mainText' v-model='mainText'></b-form-textarea>
+    <b-button @click='addList'>추가</b-button>
   </div>
 </template>
 
@@ -20,14 +22,14 @@ export default {
     }
   },
   methods:{
-    addTodo(){
-      if(this.titleText&&this.mainText){
-        this.$store.dispatch('list/addTodo',{
-          title:this.titleText,
-          main:this.mainText
+    addList(){
+      if(this.titleText.length > 1 && this.mainText.length > 1){
+        this.$store.dispatch('list/addList',{
+          title: this.titleText,
+          main: this.mainText
         })
-        this.titleText=''
-        this.mainText=''
+        this.titleText= ''
+        this.mainText= ''
         this.$router.go(-1)
       }
       
@@ -37,11 +39,11 @@ export default {
 </script>
 
 <style>
-.titleText{
+.titleText {
   width: 490px;
   font-size: 25px;
 }
-.mainText{
+.mainText {
   width: 490px;
   height: 200px;
 }

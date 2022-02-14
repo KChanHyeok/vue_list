@@ -2,10 +2,10 @@
   <div>
     <b-button @click="onAddList" size='lg' >등록</b-button>
     <div class="listBox">
-      <div v-for="(todo, index) in todos" :key=todo.id>
-        <hr>
-        <span @click="onInfoList(index)">{{todo.title}}</span>
-        <hr>
+      <div v-for="list in lists" :key=list.id>
+        <b-list-group @click="onInfoList(list.id)">
+          <b-list-group-item button>{{ list.title }}</b-list-group-item>
+        </b-list-group>
       </div>
     </div>
   </div>
@@ -18,17 +18,17 @@ export default {
 
   data() {
     return {
-      }
+    }
   },
-  computed:{
-    ...mapGetters('list',['todos'])
+  computed: {
+    ...mapGetters('list', ['lists'])
   },
-  methods:{
-    onAddList(){
+  methods: {
+    onAddList() {
       this.$router.push('/listcreate')
     },
-    onInfoList(index){
-      this.$store.dispatch('list/getInfoTodo',{index})
+    onInfoList(id) {
+      this.$store.dispatch('list/getInfoList', {id})
       this.$router.push('/listinfo')
     }
   }

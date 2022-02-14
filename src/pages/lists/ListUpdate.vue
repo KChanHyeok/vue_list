@@ -1,9 +1,13 @@
 <template>
   <div>
     <p>수정할 내용을 입력하시오</p>
-    제목 <b-form-input v-model="todoInfo.title" ></b-form-input><br>
-    내용 <b-form-textarea v-model="todoInfo.text"></b-form-textarea><br>
-    <b-button @click="gohome">수정완료</b-button>
+
+      <p>제목</p>
+      <b-form-input :value="listInfo.title" @keyup="onChangeTitle" trim></b-form-input><br>
+
+      <p>내용</p>
+      <b-form-textarea :value="listInfo.main" @keyup="onChangeMain" ></b-form-textarea><br>
+      <b-button @click="updateList" >수정완료</b-button>
   </div>
 </template>
 
@@ -11,15 +15,26 @@
 import {InfoMixin} from '../mixin'
 
 export default {
-  mixins:[InfoMixin],
-  data(){
-    return{
+  mixins: [InfoMixin],
+  data() {
+    return {
+
     }
   },
-  methods:{
-    gohome(){
-    this.$router.push('/')
-    this.$store.dispatch('list/saveInfoTodo')
+  methods: {
+    updateList() {
+        this.$store.dispatch('list/updateInfoList',{
+        id: this.listInfo.id,
+        title: this.listInfo.title,
+        main: this.listInfo.main
+        })
+        this.$router.push('/')
+    },
+    onChangeTitle(e) {
+      this.listInfo.title = e.target.value
+    },
+    onChangeMain(e) {
+      this.listInfo.main = e.target.value
     }
   }
 }

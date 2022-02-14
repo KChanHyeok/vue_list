@@ -1,54 +1,63 @@
+let id = JSON.parse(localStorage.getItem('id')) || 1
 
-const types={
-  ADD_TODO: 'ADD_TODO',
-  GET_INFO_TODO:'GET_INFO_TODO',
-  UPDATE_INFO_TODO: 'UPDATE_INFO_TODO'
+const types = {
+  ADD_LIST: 'ADD_LIST',
+  GET_INFO_LIST: 'GET_INFO_LIST',
+  UPDATE_INFO_LIST: 'UPDATE_INFO_LIST'
   }
-export default {
-  namespaced:true,
 
-  state(){
+export default {
+  namespaced: true,
+
+  state() {
     return {
-      todos: JSON.parse(localStorage.getItem('todos')) || [],
-      todoInfo: JSON.parse(localStorage.getItem('todosInfo')) || []
+      lists: JSON.parse(localStorage.getItem('list')) || [],
+      listInfo: JSON.parse(localStorage.getItem('listsInfo')) || []
     }
   },
   getters: {
-    todos(state){
-      return state.todos
+    lists (state) {
+      return state.lists
     },
-    todoInfo(state){
-      return state.todoInfo
+    listInfo (state) {
+      return state.listInfo
     }
   },
   mutations: {
-    [types.ADD_TODO](state, payload){
-      state.todos.push({
-        id:Math.random(),
+    [types.ADD_LIST] (state, payload) {
+      state.lists.push({
+        id: id++,
         title:payload.title,
-        text:payload.main
+        main:payload.main
       })
-      localStorage.setItem('todos', JSON.stringify(state.todos))
+      localStorage.setItem('list', JSON.stringify(state.lists))
+      localStorage.setItem('id', JSON.stringify(id))
     },
-    [types.GET_INFO_TODO](state, payload){
-      state.todoInfo = state.todos[payload]
-      localStorage.setItem('todosInfo', JSON.stringify(state.todoInfo))
-      localStorage.setItem('todos', JSON.stringify(state.todos))
+    [types.GET_INFO_LIST] (state, payload) {
+      const index = state.lists.findIndex(list => {
+        return list.id === payload
+      })
+      state.listInfo = state.lists[index]
     },
-    [types.UPDATE_INFO_TODO](state){
-      localStorage.setItem('todosInfo', JSON.stringify(state.todoInfo))
-      localStorage.setItem('todos', JSON.stringify(state.todos))
+    [types.UPDATE_INFO_LIST] (state, payload) {
+      const index = state.lists.findIndex(list => {
+        return list.id === payload.id
+      })
+      state.lists[index] = payload
+      localStorage.setItem('list', JSON.stringify(state.lists))
+      localStorage.setItem('listsInfo', JSON.stringify(state.listInfo))
     }
   },
   actions: {
-    addTodo({commit}, payload) {
-      commit(types.ADD_TODO, payload)
+    addList ({commit}, payload) {
+      commit(types.ADD_LIST, payload)
     },
-    getInfoTodo({commit}, payload) {
-      commit(types.GET_INFO_TODO, payload.index)
+    getInfoList ({commit}, payload) {
+      commit(types.GET_INFO_LIST, payload.id)
     },
-    saveInfoTodo({commit}){
-      commit(types.UPDATE_INFO_TODO)
+    updateInfoList ({commit}, payload) {
+      commit(types.UPDATE_INFO_LIST, payload)
+      console.log(payload)
     }
   }
 }
