@@ -2,16 +2,15 @@
   <div>
     <p>수정할 내용을 입력하시오</p>
 
-      <p>제목</p>
-      <b-form-input 
+    <p>제목</p>
+    <b-form-input 
       v-model='title'
       trim
-      ></b-form-input><br>
+    ></b-form-input><br>
 
-      <p>내용</p>
-      <b-form-textarea v-model='contents' trim></b-form-textarea><br>
-
-      <b-button @click="updateList" >수정완료</b-button>
+    <p>내용</p>
+    <b-form-textarea v-model='contents' trim></b-form-textarea><br>
+    <b-button @click="updateList" >수정완료</b-button>
   </div>
 </template>
 
@@ -20,14 +19,14 @@ import {InfoMixin} from '../mixin'
 
 export default {
   mixins: [InfoMixin],
-  data() {
+  data () {
     return {
       title: '',
       contents: ''
     }
   },
   methods: {
-    updateList() {
+    updateList () {
       if(this.title.length > 0 && this.contents.length > 0){
         this.$store.dispatch('list/updateInfoList',{
           id: this.listInfo.id,

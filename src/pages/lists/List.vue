@@ -16,7 +16,7 @@ import {mapGetters} from 'vuex'
 
 export default {
 
-  data() {
+  data () {
     return {
     }
   },
@@ -24,10 +24,10 @@ export default {
     ...mapGetters('list', ['lists'])
   },
   methods: {
-    onAddList() {
+    onAddList () {
       this.$router.push('/listcreate')
     },
-    onInfoList(id) {
+    onInfoList (id) {
       this.$store.dispatch('list/getInfoList', {id})
       this.$router.push('/listinfo')
     }

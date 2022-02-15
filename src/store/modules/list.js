@@ -49,14 +49,14 @@ export default {
     }
   },
   actions: {
-    async addList ({commit}, payload) {
-      await commit(types.ADD_LIST, payload)
+    addList ({commit}, payload) {
+      commit(types.ADD_LIST, payload)
     },
-    async getInfoList ({commit}, payload) {
-      await commit(types.GET_INFO_LIST, payload.id)
+    getInfoList ({commit}, payload) {
+      commit(types.GET_INFO_LIST, payload.id)
     },
-    async updateInfoList ({commit}, payload) {
-      await commit(types.UPDATE_INFO_LIST, payload)
+    updateInfoList ({commit}, payload) {
+      commit(types.UPDATE_INFO_LIST, payload)
     }
   }
 }
