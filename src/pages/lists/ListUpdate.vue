@@ -3,10 +3,14 @@
     <p>수정할 내용을 입력하시오</p>
 
       <p>제목</p>
-      <b-form-input v-model="title"  trim></b-form-input><br>
+      <b-form-input 
+      v-model='title'
+      trim
+      ></b-form-input><br>
 
       <p>내용</p>
-      <b-form-textarea v-model="contents" trim></b-form-textarea><br>
+      <b-form-textarea v-model='contents' trim></b-form-textarea><br>
+
       <b-button @click="updateList" >수정완료</b-button>
   </div>
 </template>

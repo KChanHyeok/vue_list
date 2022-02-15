@@ -46,7 +46,6 @@ export default {
       })
       state.lists[index] = payload
       localStorage.setItem('list', JSON.stringify(state.lists))
-      localStorage.setItem('listsInfo', JSON.stringify(state.listInfo))
     }
   },
   actions: {
