@@ -33,7 +33,7 @@ export default {
           title: this.title,
           contents: this.contents
         })
-        this.$router.push('/')
+        this.$router.push('/list')
       }
     },
   },

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-    <b-button @click="onAddList" size='lg' >등록</b-button>
+    <b-button @click="onAddList" size='mg' >등록</b-button>
     </div>
     <div class="listBox">
       <div v-for="list in lists" :key=list.id>
