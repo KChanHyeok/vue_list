@@ -1,6 +1,11 @@
 <template>
   <div id="app">
     <div>
+      <b-nav tabs align="center">
+        <b-nav-item >마이 홈</b-nav-item>
+        <b-nav-item >이미지</b-nav-item>
+        <b-nav-item active>게시판</b-nav-item>
+      </b-nav>
     <router-view></router-view>
     </div>
   </div>
@@ -31,10 +36,9 @@ export default {
 }
 
 .listBox{
-  width: 500px;
-  height: 500px;
   border: 1px solid black;
   text-align: center;
+  overflow: auto;
 }
 
 

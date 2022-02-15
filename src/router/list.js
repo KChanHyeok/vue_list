@@ -15,10 +15,12 @@ const lists = [{
         path: '/listcreate',
         component: ListCreate
       }, {
-        path: '/listinfo',
+        path: '/listinfo/:id',
+        name: 'listinfo',
         component: ListInfo
       }, {
-        path: '/listupdate',
+        path: '/listupdate/:id',
+        name: 'listupdate',
         component: ListUpdate
     }
   ]

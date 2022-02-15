@@ -1,6 +1,8 @@
 <template>
   <div>
+    <div>
     <b-button @click="onAddList" size='lg' >등록</b-button>
+    </div>
     <div class="listBox">
       <div v-for="list in lists" :key=list.id>
         <b-list-group @click="onInfoList(list.id)">
@@ -28,8 +30,8 @@ export default {
       this.$router.push('/listcreate')
     },
     onInfoList (id) {
-      this.$store.dispatch('list/getInfoList', {id})
-      this.$router.push('/listinfo')
+      // this.$store.dispatch('list/getInfoList', {id})
+      this.$router.push({name:'listinfo' ,params:{id: id}})
     }
   }
 }

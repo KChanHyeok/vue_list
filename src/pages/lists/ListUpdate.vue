@@ -9,7 +9,7 @@
     ></b-form-input><br>
 
     <p>내용</p>
-    <b-form-textarea v-model='contents' trim></b-form-textarea><br>
+    <b-form-textarea v-model='contents'></b-form-textarea><br>
     <b-button @click="updateList" >수정완료</b-button>
   </div>
 </template>
@@ -29,7 +29,7 @@ export default {
     updateList () {
       if(this.title.length > 0 && this.contents.length > 0){
         this.$store.dispatch('list/updateInfoList',{
-          id: this.listInfo.id,
+          id: this.$route.params.id,
           title: this.title,
           contents: this.contents
         })
@@ -38,8 +38,8 @@ export default {
     },
   },
   mounted () {
-    this.title = this.listInfo.title
-    this.contents = this.listInfo.contents
+    this.title = this.lists[this.$route.params.id].title
+    this.contents = this.lists[this.$route.params.id].contents
   }
 }
 </script>
