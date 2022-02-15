@@ -20,7 +20,7 @@
       <p>내용</p>
       <b-form-textarea class='contentsText' v-model='contentsText'></b-form-textarea>
     </div>
-      <b-button @click='addList'>추가</b-button>
+    <b-button @click='addList'>추가</b-button>
   </div>
 </template>
 
