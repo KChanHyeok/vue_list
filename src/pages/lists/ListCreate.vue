@@ -1,17 +1,18 @@
 <template>
   <div>
     <p>이곳은 등록페이지입니다</p>
-    <p>제목</p>
-    <b-form-input
-    id='input-live'
-    class='titleText' 
-    v-model='titleText' 
-    :state='titleState'
-    aria-describedby='input-live-help input-live-feedback'
-    trim
-    >
-    </b-form-input>
     <div>
+      <p>제목</p>
+      <b-form-input
+      id='input-live'
+      class='titleText' 
+      v-model='titleText' 
+      :state='titleState'
+      aria-describedby='input-live-help input-live-feedback'
+      trim
+      >
+      </b-form-input>
+      
       <b-form-invalid-feedback id='input-live-feedback'> 2글자 이상 작성해주세요 </b-form-invalid-feedback>
       <b-form-text id='input-live-help'>이곳은 제목입니다.</b-form-text>
     </div>
