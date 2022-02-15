@@ -12,7 +12,7 @@
       trim
       >
       </b-form-input>
-      
+
       <b-form-invalid-feedback id='input-live-feedback'> 2글자 이상 작성해주세요 </b-form-invalid-feedback>
       <b-form-text id='input-live-help'>이곳은 제목입니다.</b-form-text>
     </div>
@@ -33,14 +33,14 @@ export default {
       return this.titleText.length > 1 ? true : false
     }
   },
-  data(){
+  data () {
     return{
       titleText:'',
       contentsText:''
     }
   },
   methods:{
-    addList(){
+    addList () {
       if(this.titleText.length > 1 && this.contentsText.length > 1){
         this.$store.dispatch('list/addList',{
           title: this.titleText,
