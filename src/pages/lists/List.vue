@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>
+    <div id="button">
     <b-button @click="onAddList" size='mg' >등록</b-button>
     </div>
     <div class="listBox">
@@ -38,5 +38,9 @@ export default {
 </script>
 
 <style>
+#button{
+  margin: 5px 20px;
+  text-align: right;
+}
 
 </style>

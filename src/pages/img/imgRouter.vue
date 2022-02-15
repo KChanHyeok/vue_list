@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 id="title">이곳은 당신의 홈입니다</h2>
+    <h2 id="title">이곳은 당신의 이미지 페이지입니다</h2>
     <router-view></router-view>
   </div>
 </template>
@@ -9,9 +9,8 @@
 
 
 export default {
-  name: 'home-router'
+  name: 'image-router'
 
 
 }
 </script>
-
