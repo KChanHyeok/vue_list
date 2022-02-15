@@ -5,21 +5,21 @@ import ListInfo from '../pages/lists/ListInfo.vue'
 import ListUpdate from '../pages/lists/ListUpdate.vue'
 
 const lists = [{
-    path: '/',
+    path: '/list',
     component: ListRouter,
     children: [
       {
         path: '',
         component: List 
       }, {
-        path: '/listcreate',
+        path: '/list/listcreate',
         component: ListCreate
       }, {
-        path: '/listinfo/:id',
+        path: '/list/listinfo/:id',
         name: 'listinfo',
         component: ListInfo
       }, {
-        path: '/listupdate/:id',
+        path: '/list/listupdate/:id',
         name: 'listupdate',
         component: ListUpdate
     }

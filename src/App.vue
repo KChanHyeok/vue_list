@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <div>
-      <b-nav tabs align="center">
-        <b-nav-item >마이 홈</b-nav-item>
-        <b-nav-item >이미지</b-nav-item>
-        <b-nav-item active>게시판</b-nav-item>
+      <b-nav tabs align="center" >
+        <b-nav-item to='/home'  exact exact-active-class='active'>마이홈</b-nav-item>
+        <b-nav-item to='/image' exact exact-active-class='active'>이미지</b-nav-item>
+        <b-nav-item to='/list' exact exact-active-class='active'>게시판</b-nav-item>
       </b-nav>
     <router-view></router-view>
     </div>
@@ -15,7 +15,17 @@
 
 export default {
   name: 'App',
+  data () {
+    return {
+      isActive: false
+    }
+  },
+  methods:{
+    onClick () {
+    }
+  }
 }
+  
 </script>
 
 <style>
@@ -26,6 +36,7 @@ export default {
 #app {
   display: flex;
   justify-content: center;
+  height: 90vh;
 }
 #title {
   text-align: center;
@@ -36,6 +47,7 @@ export default {
 }
 
 .listBox{
+  height: 300px;
   border: 1px solid black;
   text-align: center;
   overflow: auto;
