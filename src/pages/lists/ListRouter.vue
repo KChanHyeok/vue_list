@@ -7,8 +7,11 @@
 </template>
 
 <script>
+
+
 export default {
   name: 'list-router'
+
 
 }
 </script>

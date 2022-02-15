@@ -1,8 +1,8 @@
 <template>
   <div>
-    <span>제목 : {{ listInfo.title }} </span><br><br>
-    <span>내용 : {{ listInfo.main }} </span><br><br>
-    <b-button @click='onClickBack'>뒤로가기</b-button> <b-button @click='onClickUpdate'> 내용수정하기 </b-button>
+    <span>제목 : {{ lists[$route.params.id].title }} </span><br><br>
+    <span>내용 : {{ lists[$route.params.id].contents }} </span><br><br>
+    <b-button @click='onClickBack'>뒤로가기</b-button> <b-button @click='onClickUpdate($route.params.id)'> 내용수정하기 </b-button>
   </div>
 </template>
 
@@ -15,8 +15,9 @@ export default {
     onClickBack () {
       this.$router.go(-1)
     },
-    onClickUpdate () {
-      this.$router.push('/listupdate')
+    onClickUpdate (id) {
+      // this.$emit('listInfo',this.listInfo)
+      this.$router.push({name:'listupdate' ,params:{id: id}})
     }
   }
 }

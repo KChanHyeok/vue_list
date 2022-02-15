@@ -1,6 +1,8 @@
 <template>
   <div>
+    <div>
     <b-button @click="onAddList" size='lg' >등록</b-button>
+    </div>
     <div class="listBox">
       <div v-for="list in lists" :key=list.id>
         <b-list-group @click="onInfoList(list.id)">
@@ -16,7 +18,7 @@ import {mapGetters} from 'vuex'
 
 export default {
 
-  data() {
+  data () {
     return {
     }
   },
@@ -24,12 +26,12 @@ export default {
     ...mapGetters('list', ['lists'])
   },
   methods: {
-    onAddList() {
+    onAddList () {
       this.$router.push('/listcreate')
     },
-    onInfoList(id) {
-      this.$store.dispatch('list/getInfoList', {id})
-      this.$router.push('/listinfo')
+    onInfoList (id) {
+      // this.$store.dispatch('list/getInfoList', {id})
+      this.$router.push({name:'listinfo' ,params:{id: id}})
     }
   }
 }
