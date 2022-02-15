@@ -3,10 +3,10 @@
     <p>수정할 내용을 입력하시오</p>
 
       <p>제목</p>
-      <b-form-input :value="listInfo.title" @keyup="onChangeTitle" trim></b-form-input><br>
+      <b-form-input v-model="title"  trim></b-form-input><br>
 
       <p>내용</p>
-      <b-form-textarea :value="listInfo.main" @keyup="onChangeMain" ></b-form-textarea><br>
+      <b-form-textarea v-model="contents" trim></b-form-textarea><br>
       <b-button @click="updateList" >수정완료</b-button>
   </div>
 </template>
@@ -18,24 +18,25 @@ export default {
   mixins: [InfoMixin],
   data() {
     return {
-
+      title: '',
+      contents: ''
     }
   },
   methods: {
     updateList() {
+      if(this.title.length > 0 && this.contents.length > 0){
         this.$store.dispatch('list/updateInfoList',{
         id: this.listInfo.id,
-        title: this.listInfo.title,
-        main: this.listInfo.main
+        title: this.title,
+        contents: this.contents
         })
         this.$router.push('/')
+      }
     },
-    onChangeTitle(e) {
-      this.listInfo.title = e.target.value
-    },
-    onChangeMain(e) {
-      this.listInfo.main = e.target.value 
-    }
+  },
+  mounted () {
+    this.title = this.listInfo.title
+    this.contents = this.listInfo.contents
   }
 }
 </script>

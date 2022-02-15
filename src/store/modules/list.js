@@ -27,8 +27,8 @@ export default {
     [types.ADD_LIST] (state, payload) {
       state.lists.push({
         id: id++,
-        title:payload.title,
-        main:payload.main
+        title: payload.title,
+        contents: payload.contents
       })
       localStorage.setItem('list', JSON.stringify(state.lists))
       localStorage.setItem('id', JSON.stringify(id))
