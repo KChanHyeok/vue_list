@@ -4,7 +4,7 @@
     <p>제목</p>
     <b-form-input class='titleText' v-model='titleText' trim></b-form-input><br>
     <p>내용</p>
-    <b-form-textarea class='mainText' v-model='mainText'></b-form-textarea>
+    <b-form-textarea class='contentsText' v-model='contentsText'></b-form-textarea>
     <b-button @click='addList'>추가</b-button>
   </div>
 </template>
@@ -18,18 +18,18 @@ export default {
   data(){
     return{
       titleText:'',
-      mainText:''
+      contentsText:''
     }
   },
   methods:{
     addList(){
-      if(this.titleText.length > 1 && this.mainText.length > 1){
+      if(this.titleText.length > 1 && this.contentsText.length > 1){
         this.$store.dispatch('list/addList',{
           title: this.titleText,
-          main: this.mainText
+          contents: this.contentsText
         })
         this.titleText= ''
-        this.mainText= ''
+        this.contentsText= ''
         this.$router.go(-1)
       }
       
@@ -43,7 +43,7 @@ export default {
   width: 490px;
   font-size: 25px;
 }
-.mainText {
+.contentsText {
   width: 490px;
   height: 200px;
 }
