@@ -12,9 +12,6 @@
 <script>
 
 export default {
-  computed:{
-
-  },
   data(){
     return{
       titleText:'',

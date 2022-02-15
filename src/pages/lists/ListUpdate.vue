@@ -26,9 +26,9 @@ export default {
     updateList() {
       if(this.title.length > 0 && this.contents.length > 0){
         this.$store.dispatch('list/updateInfoList',{
-        id: this.listInfo.id,
-        title: this.title,
-        contents: this.contents
+          id: this.listInfo.id,
+          title: this.title,
+          contents: this.contents
         })
         this.$router.push('/')
       }
