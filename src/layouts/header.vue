@@ -1,8 +1,10 @@
 <template>
   <div>
-    <b-card class="nav" title="Card Title"  no-body>
+    <b-card bg-variant="info" title="Card Title" no-body>
       <b-card-header  header-tag="nav">
-        <b-button v-b-toggle.collapse-1 class="menubtn" variant="primary" >메뉴</b-button> 
+        <div class="button">
+          <b-button v-b-toggle.collapse-1 class="menubtn" variant="light" >메뉴</b-button> 
+        </div>
         <b-collapse id="collapse-1" class="mt-1" >
           <b-nav vertical >
             <b-nav-item to='/home'  active-class='active'>마이홈</b-nav-item>

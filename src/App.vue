@@ -62,10 +62,10 @@ export default {
   text-align: center;
   overflow: auto;
 }
-
 .menubtn{
-  margin-left: 860px;
-  }
+  display: flex;
+  float: right;
+}
 
 
 </style>
