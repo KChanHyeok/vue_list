@@ -1,20 +1,20 @@
 <template>
   <div id="app">
     <div id="container">
-      <b-nav tabs align="center" >
-        <b-nav-item to='/home' exact exact-active-class='active'>마이홈</b-nav-item>
-        <b-nav-item to='/image' exact exact-active-class='active'>이미지</b-nav-item>
-        <b-nav-item to='/list' exact exact-active-class='active'>게시판</b-nav-item>
-      </b-nav>
+    <Header/>
     <router-view></router-view>
     </div>
   </div>
 </template>
 
 <script>
+import Header from './layouts/header.vue'
 
 export default {
   name: 'App',
+  components:{
+    Header
+  },
   data () {
     return {
       isActive: false

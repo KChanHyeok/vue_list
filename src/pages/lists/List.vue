@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     onAddList () {
-      this.$router.push('/listcreate')
+      this.$router.push('/list/listcreate')
     },
     onInfoList (id) {
       // this.$store.dispatch('list/getInfoList', {id})
