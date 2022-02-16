@@ -13,7 +13,7 @@ const routes = {
     ...list,
     ...home,
     ...image
-  ],
+  ]
 }
 
 let router = new VueRouter(routes)

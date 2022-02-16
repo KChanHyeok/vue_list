@@ -27,7 +27,7 @@ export default {
   
 </script>
 
-<style>
+<style lang='scss'>
 *{
   margin: 0;
 }
@@ -41,6 +41,7 @@ export default {
   width: 100%;
   height: 100%;
   border: 1px solid black;
+  background-color: $bgSkyblue;
 }
 
 #title {
@@ -50,6 +51,10 @@ export default {
   margin-top: 20px;
 
 }
+#button{
+  margin: 5px 20px;
+  text-align: right;
+}
 
 .listBox{
   height: 300px;
@@ -57,6 +62,10 @@ export default {
   text-align: center;
   overflow: auto;
 }
+
+.menubtn{
+  margin-left: 860px;
+  }
 
 
 </style>

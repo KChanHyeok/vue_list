@@ -1,9 +1,9 @@
 <template>
   <div>
-    <b-card title="Card Title" no-body>
-      <b-card-header header-tag="nav">
+    <b-card class="nav" title="Card Title"  no-body>
+      <b-card-header  header-tag="nav">
         <b-button v-b-toggle.collapse-1 class="menubtn" variant="primary" >메뉴</b-button> 
-        <b-collapse id="collapse-1" class="mt-1">
+        <b-collapse id="collapse-1" class="mt-1" >
           <b-nav vertical >
             <b-nav-item to='/home'  active-class='active'>마이홈</b-nav-item>
             <b-nav-item to='/image' active-class='active'>이미지</b-nav-item>
@@ -22,5 +22,5 @@ export default {
 </script>
 
 <style>
-.menubtn{float: right; }
+
 </style>

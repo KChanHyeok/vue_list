@@ -38,9 +38,6 @@ export default {
 </script>
 
 <style>
-#button{
-  margin: 5px 20px;
-  text-align: right;
-}
+
 
 </style>
