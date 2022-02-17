@@ -54,32 +54,32 @@ nav{
   justify-content: right;
 }
 
-.listBox {
-  max-width: 600px;
-  width: 100%;
-  height: 300px;
-  text-align: center;
-  margin: auto;
-}
 
 .box {
   @include Box(black)
 }
-
-
 .boxlist{
+  display: flex;
+  width: 500px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+}
+
+
+.list {
   @include listBox
 }
-.titleBox {
+.listTitle {
   @include listPage
 }
-.contentsBox {
+.listContents {
   @include listPage
 }
-.listInfoBox {
+.listInfo {
   @include listPage
 }
-.updateBox {
+.listUpdate {
   @include listPage
 }
 

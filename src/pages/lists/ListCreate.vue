@@ -1,7 +1,7 @@
 <template>
   <div>
     <p align='center'>이곳은 등록페이지입니다</p>
-    <div class="titleBox">
+    <div class="listTitle">
       <p>제목</p>
       <b-form-input
         id='input-live'
@@ -16,7 +16,7 @@
       <b-form-text id='input-live-help'>이곳은 제목입니다.</b-form-text>
     </div>
     <br>
-    <div class="contentsBox">
+    <div class="listContents">
       <p>내용</p>
       <b-form-textarea 
         id='textarea-state'

@@ -1,5 +1,5 @@
 <template>
-  <div class="updateBox">
+  <div class="listUpdate">
     <p>수정할 내용을 입력하시오</p>
     <p>제목</p>
     <b-form-input 
