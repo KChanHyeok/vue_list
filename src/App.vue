@@ -39,7 +39,6 @@ nav{
 
 #title {
   text-align: center;
-  display: block;
   margin-bottom: 10px;
   margin-top: 20px;
 }
@@ -62,10 +61,11 @@ nav{
   text-align: center;
   margin: auto;
 }
-.menubtn {
-  display: flex;
-  float: right;
+
+.box {
+  @include Box(black)
 }
+
 .boxlist{
   display: flex;
   width: 500px;
@@ -74,20 +74,18 @@ nav{
   margin: auto;
 }
 
-.box {
-  @include Box($blue)
-}
+
 .titleBox {
-  @include listbox
+  @include listPage
 }
 .contentsBox {
-  @include listbox
+  @include listPage
 }
 .listInfoBox {
-  @include listbox
+  @include listPage
 }
 .updateBox {
-  @include listbox
+  @include listPage
 }
 
 </style>

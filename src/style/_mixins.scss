@@ -16,14 +16,13 @@
 
 @mixin Box($color) {
   margin: 10px;
-  max-width: 200px;
   height: 200px;
-  width: 100%;
+  width: 200px;
   border-radius: 20px;
   border: 1px solid $color;
 }
 
-@mixin listbox {
+@mixin listPage {
   max-width: 350px;
   width: 100%;
   margin: auto;
