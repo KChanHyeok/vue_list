@@ -1,8 +1,8 @@
 <template>
   <div class="home"> 
     <h2 align=center>home</h2>
-    <div v-for="box in 6" :key="box.id" class="boxlist" aglin='center'>
-      <div class="box"></div>
+    <div  class="boxlist" aglin='center'>
+      <div class="box" v-for="box in 6" :key="box.id"></div>
     </div>
   </div>
 </template>

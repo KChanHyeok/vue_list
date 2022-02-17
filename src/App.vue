@@ -60,8 +60,9 @@ nav{
 }
 .boxlist{
   display: flex;
-  width: 500px;
   flex-wrap: wrap;
+  max-width: 700px;
+  width: 100%;
   justify-content: center;
   margin: auto;
 }
