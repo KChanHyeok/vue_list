@@ -28,3 +28,11 @@
   margin: auto;
 }
 
+@mixin listBox {
+  display: flex;
+  width: 500px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+}
+

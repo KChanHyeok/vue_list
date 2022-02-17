@@ -66,15 +66,10 @@ nav{
   @include Box(black)
 }
 
+
 .boxlist{
-  display: flex;
-  width: 500px;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: auto;
+  @include listBox
 }
-
-
 .titleBox {
   @include listPage
 }
