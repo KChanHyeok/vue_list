@@ -1,9 +1,7 @@
 <template>
-  <div id="list">
-    <div id="button">
-    <b-button @click="onAddList" size='mg' variant='light'>등록</b-button>
-    </div>
+  <div>
     <div class="list">
+    <b-button @click="onAddList" size='mg' variant='light' class="addButton">등록</b-button>
       <div v-for="list in lists" :key=list.id>
         <b-list-group @click="onInfoList(list.id)">
           <b-list-group-item button>{{ list.title }}</b-list-group-item>

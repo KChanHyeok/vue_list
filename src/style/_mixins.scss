@@ -18,8 +18,19 @@
   margin: 10px;
   height: 200px;
   width: 250px;
-  border-radius: 20px;
+  border-radius: 10px;
   border: 1px solid $color;
+  &:hover {
+    background-color: blue;
+  }
+}
+
+@mixin lists {
+  max-width: 600px;
+  width: 100%;
+  height: 300px;
+  text-align: center;
+  margin: auto;
 }
 
 @mixin listPage {
@@ -28,11 +39,12 @@
   margin: auto;
 }
 
-@mixin listBox {
-  max-width: 600px;
-    width: 100%;
-    height: 300px;
-    text-align: center;
-    margin: auto;
+@mixin boxList{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 900px;
+  width: 100%;
+  justify-content: center;
+  margin: auto;
 }
 

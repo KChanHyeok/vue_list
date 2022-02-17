@@ -54,22 +54,21 @@ nav{
   justify-content: right;
 }
 
+.addButton{
+  justify-content: right;
+}
+
 
 .box {
   @include Box(black)
 }
 .boxlist{
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 700px;
-  width: 100%;
-  justify-content: center;
-  margin: auto;
+  @include boxList
 }
 
 
 .list {
-  @include listBox
+  @include lists
 }
 .listTitle {
   @include listPage
