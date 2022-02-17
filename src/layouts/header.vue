@@ -1,19 +1,38 @@
 <template>
   <div>
-    <b-card bg-variant="info" title="Card Title" no-body>
-      <b-card-header  header-tag="nav">
-        <div class="button">
-          <b-button v-b-toggle.collapse-1 class="menubtn" variant="light" >메뉴</b-button> 
-        </div>
-        <b-collapse id="collapse-1" class="mt-1" >
-          <b-nav vertical >
-            <b-nav-item to='/home'  active-class='active'>마이홈</b-nav-item>
-            <b-nav-item to='/image' active-class='active'>이미지</b-nav-item>
-            <b-nav-item to='/list' active-class='active'>게시판</b-nav-item>
-          </b-nav>
-        </b-collapse>
-      </b-card-header>
-    </b-card>
+    <b-navbar toggleable type="dark" variant="info">
+    <b-navbar-brand class="p-2" href="#">MYPAGE</b-navbar-brand>
+    <b-navbar-toggle class="toggleBox" target="navbar-toggle-collapse">  
+    </b-navbar-toggle>
+    <b-collapse id="navbar-toggle-collapse" is-nav>
+      <b-navbar-nav class="p-2">
+        <router-link 
+          to='/home' 
+          custom v-slot="{navigate, isActive}"
+        >
+          <b-nav-item :active='isActive' @click='navigate'>
+            마이홈
+          </b-nav-item>
+        </router-link>
+        <router-link 
+          to='/image' 
+          custom v-slot="{navigate, isActive}"
+        >
+          <b-nav-item :active='isActive' @click='navigate'>
+            이미지
+          </b-nav-item>
+        </router-link>
+        <router-link 
+          to='/list' 
+          custom v-slot="{navigate, isActive}"
+        >
+          <b-nav-item :active='isActive' @click='navigate'>
+            게시판
+          </b-nav-item>
+        </router-link>
+      </b-navbar-nav>
+    </b-collapse>
+  </b-navbar>
   </div>
 </template>
 

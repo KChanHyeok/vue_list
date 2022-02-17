@@ -41,7 +41,6 @@ export default {
   width: 100%;
   height: 100%;
   border: 1px solid black;
-  background-color: $bgSkyblue;
 }
 
 #title {
@@ -51,20 +50,23 @@ export default {
   margin-top: 20px;
 
 }
-#button{
+#button {
   margin: 5px 20px;
   text-align: right;
 }
 
-.listBox{
+.listBox {
   height: 300px;
   border: 1px solid black;
   text-align: center;
   overflow: auto;
 }
-.menubtn{
+.menubtn {
   display: flex;
   float: right;
+}
+.toggleBox {
+  margin-right: 20px;
 }
 
 
