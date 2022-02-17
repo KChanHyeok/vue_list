@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="list">
     <div id="button">
     <b-button @click="onAddList" size='mg' variant='light'>등록</b-button>
     </div>

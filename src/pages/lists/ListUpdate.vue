@@ -1,16 +1,15 @@
 <template>
-  <div>
+  <div class="updateBox">
     <p>수정할 내용을 입력하시오</p>
-
     <p>제목</p>
     <b-form-input 
       v-model='title'
       trim
-    ></b-form-input><br>
-
+      class="mb-3"
+    ></b-form-input>
     <p>내용</p>
-    <b-form-textarea v-model='contents'></b-form-textarea><br>
-    <b-button @click="updateList" >수정완료</b-button>
+    <b-form-textarea v-model='contents'></b-form-textarea>
+    <b-button @click="updateList" class="mt-3">수정완료</b-button>
   </div>
 </template>
 

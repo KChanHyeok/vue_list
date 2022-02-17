@@ -1,11 +1,18 @@
 <template>
-  <div>
+  <nav>
     <b-navbar toggleable type="dark" variant="info">
-    <b-navbar-brand class="p-2" href="#">MYPAGE</b-navbar-brand>
-    <b-navbar-toggle class="toggleBox" target="navbar-toggle-collapse">  
+    <router-link
+      to='/list' 
+      custom v-slot="{navigate}"
+    >
+      <b-navbar-brand class="ml-2" @click="navigate">
+        MYPAGE
+      </b-navbar-brand>
+    </router-link>
+    <b-navbar-toggle class="mr-3" target="navbar-toggle-collapse">  
     </b-navbar-toggle>
     <b-collapse id="navbar-toggle-collapse" is-nav>
-      <b-navbar-nav class="p-2">
+      <b-navbar-nav class="ml-2">
         <router-link 
           to='/home' 
           custom v-slot="{navigate, isActive}"
@@ -33,7 +40,7 @@
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
-  </div>
+  </nav>
 </template>
 
 <script>
@@ -43,5 +50,4 @@ export default {
 </script>
 
 <style>
-
 </style>

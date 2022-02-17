@@ -14,14 +14,6 @@ export default {
   name: 'App',
   components:{
     Header
-  },
-  data () {
-    return {
-      isActive: false
-    }
-  },
-  methods:{
-
   }
 }
   
@@ -31,16 +23,18 @@ export default {
 *{
   margin: 0;
 }
+nav{
+  position:fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
 
 #app {
-  display: flex;
-  justify-content: center;
-  height: 90vh;
+  @include app
 }
 #container {
-  width: 100%;
-  height: 100%;
-  border: 1px solid black;
+  margin-top: 90px;
 }
 
 #title {
@@ -48,26 +42,52 @@ export default {
   display: block;
   margin-bottom: 10px;
   margin-top: 20px;
-
 }
+
+#list{
+  @include list
+}
+
 #button {
-  margin: 5px 20px;
-  text-align: right;
+  display: flex;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  justify-content: right;
 }
 
 .listBox {
+  max-width: 600px;
+  width: 100%;
   height: 300px;
-  border: 1px solid black;
   text-align: center;
-  overflow: auto;
+  margin: auto;
 }
 .menubtn {
   display: flex;
   float: right;
 }
-.toggleBox {
-  margin-right: 20px;
+.boxlist{
+  display: flex;
+  width: 500px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
 }
 
+.box {
+  @include Box($blue)
+}
+.titleBox {
+  @include listbox
+}
+.contentsBox {
+  @include listbox
+}
+.listInfoBox {
+  @include listbox
+}
+.updateBox {
+  @include listbox
+}
 
 </style>

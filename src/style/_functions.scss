@@ -1,0 +1,21 @@
+@for $i from 1 to 10 {
+  .text-#{$i} {
+    font-size: $i*5px;
+  }
+  .ml-#{$i} {
+    margin-left: $i*10px;
+  }
+  .mr-#{$i} {
+    margin-right: $i*10px;
+  }
+  .mt-#{$i} {
+    margin-top: $i*10px;
+  }
+  .mb-#{$i} {
+    margin-bottom: $i*10px;
+  }
+}
+.ma {
+  margin: auto;
+}
+
