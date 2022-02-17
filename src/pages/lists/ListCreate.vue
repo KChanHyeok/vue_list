@@ -47,7 +47,7 @@ export default {
   },
   methods:{
     addList () {
-      if(this.titleText.length > 1 && this.contentsText.length > 1){
+      if(this.titleText.length > 1 && this.contentsText.length > 1) {
         this.$store.dispatch('list/addList',{
           title: this.titleText,
           contents: this.contentsText
@@ -56,7 +56,6 @@ export default {
         this.contentsText= ''
         this.$router.go(-1)
       }
-      
     }
   }
 }
