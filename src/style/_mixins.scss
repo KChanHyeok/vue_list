@@ -26,6 +26,8 @@
 }
 
 @mixin lists {
+  display: flex;
+  flex-flow: column;
   max-width: 600px;
   width: 100%;
   height: 300px;

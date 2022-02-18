@@ -54,10 +54,6 @@ nav{
   justify-content: right;
 }
 
-.addButton{
-  justify-content: right;
-}
-
 
 .box {
   @include Box(black)
