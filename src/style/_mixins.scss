@@ -3,9 +3,6 @@
   box-shadow: 0 0 1px rgba($theme, .25);
   color: $bgWhite;
 }
-@mixin app {
-  height: 200vh;
-}
 
 @mixin list {
   flex-flow:column;
@@ -14,12 +11,11 @@
   max-width: 600px;
 }
 
-@mixin Box($color) {
+@mixin HomeBox($color) {
   margin: 10px;
-  height: 200px;
-  width: 250px;
-  border-radius: 10px;
-  border: 1px solid $color;
+  border-radius: 7px;
+  background-color: cadetblue;
+  // border: 1px solid $color;
 }
 
 @mixin lists {
@@ -47,3 +43,7 @@
   margin: auto;
 }
 
+@mixin boxSize {
+  height: 180px;
+  width: 250px;
+}

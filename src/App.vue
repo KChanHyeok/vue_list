@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div id="container">
+    <div class="mt-9">
     <Header/>
     <router-view></router-view>
     </div>
@@ -31,37 +31,27 @@ nav{
 }
 
 #app {
-  @include app
-}
-#container {
-  margin-top: 90px;
-}
-
-#title {
-  text-align: center;
-  margin-bottom: 10px;
-  margin-top: 20px;
+  height: 200vh;
 }
 
 #list{
   @include list
 }
 
-#button {
-  display: flex;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  justify-content: right;
+.hoverImg {
+  &:hover {
+    opacity: 30%;
+  }
 }
 
 
-.box {
-  @include Box(black)
+.homebox {
+  @include HomeBox(black);
+  @include boxSize;
 }
 .boxlist {
   @include boxList
 }
-
 
 .list {
   @include lists
