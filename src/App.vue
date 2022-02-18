@@ -58,7 +58,7 @@ nav{
 .box {
   @include Box(black)
 }
-.boxlist{
+.boxlist {
   @include boxList
 }
 

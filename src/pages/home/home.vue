@@ -2,7 +2,24 @@
   <div class="home"> 
     <h2 align=center>home</h2>
     <div  class="boxlist" aglin='center'>
-      <div class="box" v-for="box in 6" :key="box.id"></div>
+      <div class="box">
+
+      </div>
+      <div class="box">
+
+      </div>
+      <div class="box">
+
+      </div>
+      <div class="box">
+
+      </div>
+      <div class="box">
+
+      </div>
+      <div class="box">
+
+      </div>
     </div>
   </div>
 </template>
